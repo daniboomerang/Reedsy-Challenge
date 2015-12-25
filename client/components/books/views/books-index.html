@@ -1,0 +1,16 @@
+<div id="books-index-container">
+	<div id="books-index-navbar">
+	    <ul>
+	    	<li><input type="text" id="query" ng-model="query"/></li>
+	    	<li>Total: {{ filteredBooks.length }}</li>
+	    <ul>
+	</div>
+	<div id="books-index-list">
+		<div class="book-index-info-wrapper" ng-repeat="book in filteredBooks = (books | filter:query)">
+			<a ui-sref="books.open({ bookName: book.name.split(' ').join('-') })">
+				<!-- book-index-info receives the parameters to display. One way data Binfing with @ -->
+    			<book-index-info cover="{{ book.cover }}" name="{{ book.name }}" author="{{ book.author.name }}" votes="{{ book.likes }}" published="{{ book.published }}"></book-index-info>
+    		</a>
+    	</div>
+  	</div>
+</div>

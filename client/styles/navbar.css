@@ -1,0 +1,17 @@
+/****
+ Nav
+*****/
+
+#navbar { background-color: black; padding: 0.5em 1.5em 0.5em 1.5em; overflow-x: auto; overflow-y: hidden; white-space: nowrap; }
+#navbar a { transition: all .3s ease-in-out; display: block; color: white; text-decoration: none; }
+#navbar a:link { color: white; }
+#navbar a:visited { color: white; }
+#navbar a:hover { color: #ACC93D;  }
+#navbar a:focus { color: #ACC93D; }
+#navbar li { width: auto; margin-right: 10%; line-height: 5em; display: inline-block; /* if ie7 support needed */ *display: inline; zoom: 1; }
+.module-element { float: right; }
+a.navbar-link-active { color: #ACC93D !important; }
+#logo { display: inline-block; float: left; width: 5em; margin-left: 5%; position: relative; height: 5em; }
+#logo img.ri { position: absolute; top: 10%; left: 10%; -webkit-transition: opacity 1s ease-in-out; -moz-transition: opacity 1s ease-in-out; -o-transition: opacity 1s ease-in-out; transition: opacity 1s ease-in-out; }
+#logo img.ri:empty { top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+#logo img.top:hover { opacity:0; }

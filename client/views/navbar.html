@@ -1,0 +1,14 @@
+<div id="navbar">
+	<ul>
+		<div id="logo">
+            <a ui-sref="home">
+            	<div id="github">
+					  <img class="bottom ri" src="images/parrot-green.svg"/>
+					  <img class="top ri" src="images/parrot-white.svg" alt="Reedsy Challenge" title="Reedsy Challenge"/>
+				</div>
+            </a>
+        </div>
+        <li ng-repeat="module in modules" class="module-element"><a ng-class="{'navbar-link-active': module.name == currentModuleName}" id="{{module.idLink}}" ui-sref="{{module.state}}"><h3>{{ module.text }}</h3></a> 
+        </li>
+    </ul>
+</div>

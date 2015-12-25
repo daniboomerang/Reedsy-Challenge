@@ -1,0 +1,13 @@
+{
+  "name": "Reedsy-Challenge",
+  "version": "1.0.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-ui-router": "0.2.15",
+    "angular-loader": "1.4.x",
+    "angular-mocks": "1.4.x"
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+    <head lang="es">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <base href="/">
+        <title>Reedsy Challenge</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="">
+
+
+        <!-- APP CSS -->
+        <link rel="stylesheet" href="styles/app.css">
+        <link rel="stylesheet" href="styles/navbar.css">
+ 
+        <!-- APP COMPONENTS-->
+            <!-- HOME COMPONENT -->
+            <link rel="stylesheet" href="components/home/css/home.css">
+            <!-- BOOKS COMPONENT -->
+            <link rel="stylesheet" href="components/books/css/books.css">
+
+    </head>
+
+    <body ng-app="app">
+
+        <div navbar></div>
+        <div id="content" ui-view></div>
+
+        <script src="scripts/vendor/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  
+        <!-- APP SCRIPTS-->
+        <script src="scripts/app.js"></script>
+        <!-- -->      
+
+        <!-- APP COMPONENTS-->
+            <!-- HOME COMPONENT-->
+            <script src="components/home/scripts/home.js"></script>
+            <script src="components/home/scripts/directives.js"></script>
+            <!-- -->      
+             <!-- BOOKS COMPONENT-->
+            <script src="components/books/scripts/books.js"></script>
+            <script src="components/books/scripts/directives.js"></script>
+            <script src="components/books/scripts/services.js"></script>
+            <!-- -->      
+
+    </body>
+
+</html>

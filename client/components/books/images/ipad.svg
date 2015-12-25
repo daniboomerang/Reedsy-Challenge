@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="700" width="500" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 499.99998 700.00002" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs>
+  <style type="text/css"><![CDATA[
+    .fil0 {fill:#1F1A17}
+   ]]></style>
+  <linearGradient id="linearGradient5623" y2="261.53" gradientUnits="userSpaceOnUse" y1="52.281" gradientTransform="matrix(1.0003 0 0 1 -1207.1 -201.96)" x2="1157.6" x1="1379.4">
+   <stop stop-color="#595b5e" offset="0"/>
+   <stop stop-color="#595b5e" offset=".5"/>
+   <stop stop-opacity="0" stop-color="#595b5e" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient5648" y2="695.1" gradientUnits="userSpaceOnUse" x2="194.49" gradientTransform="matrix(.91653 0 0 .80188 -388.51 317.63)" y1="625.3" x1="194.49">
+   <stop stop-color="#151515" offset="0"/>
+   <stop stop-color="#151515" offset=".60526"/>
+   <stop stop-color="#525252" offset=".81579"/>
+   <stop stop-color="#919192" offset="1"/>
+  </linearGradient>
+  <filter id="filter6253-8-2-4" style="color-interpolation-filters:sRGB" height="2.1052" width="1.0372" y="-.5526" x="-.018606">
+   <feGaussianBlur stdDeviation="2.6581442"/>
+  </filter>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(811.1 45.901)">
+  <g transform="matrix(.9 0 0 .9 -205.55 300.87)">
+   <g transform="matrix(-.45221 5.7421 5.7421 .45221 -114.89 -958.84)">
+    <g transform="matrix(.0033612 -.043442 .043442 .0033612 103.8 4.9472)" fill="none" sketch:type="MSPage">
+     <g sketch:type="MSLayerGroup">
+      <g sketch:type="MSShapeGroup">
+       <g transform="translate(.17002 -123.96)">
+        <path d="m1958.5 73.671-1846.8-0.127c-60.789-0.004-111.89 48.536-111.89 108.38l0.19037 2576.7c0.0043359 59.9 55.513 108.4 123.72 108.4l1827.7 0.1257c67.106 0 123.61-46.728 123.6-113.7l-0.1862-2571.4c0.096-59.846-51.112-108.39-116.32-108.4z" stroke="#727888" stroke-width="7.177" fill="#231f20"/>
+        <path d="m1958.4 87.015-1846.6-0.127c-25.701-0.0018-50.101 9.8763-68.701 27.734-18.799 18.048-29.098 41.987-29.096 67.256l0.15 2576.8c0.0038 52.438 49.209 95.001 109.61 95.005l1827.6 0.1255c29.501 0 57.002-9.9708 77.301-28.114 20.7-18.523 32.198-44.172 32.196-72.196l-0.1858-2571.5c0-25.459-10.504-49.304-29.506-67.165-19.202-17.956-45.004-27.837-72.705-27.839z" stroke="#434d6a" stroke-width="3.1069" fill="#000"/>
+        <g transform="translate(1025.8 182.99)">
+         <path fill="#3c3838" d="m16.4-0.4c9.1 0 16.4 7.4 16.4 16.4 0 9.1-7.4 16.4-16.4 16.4s-16.4-7.4-16.4-16.4 7.3-16.4 16.4-16.4z"/>
+         <path fill="#464648" d="m16.4 8.4c4.4 0 8 3.6 8 8s-3.6 8-8 8-8-3.6-8-8 3.6-8 8-8z" stroke="#e4dfdf"/>
+        </g>
+       </g>
+       <g transform="matrix(-4.4272 -.0060720 -.0060720 4.4272 2397.5 259.68)">
+        <g transform="matrix(.46897 0 0 .53602 405.44 71.452)">
+         <rect style="color:#000000" transform="matrix(2.9907 0 0 1.2658 -800.95 -6.939)" rx="160.97" ry="5.7723" height="11.545" filter="url(#filter6253-8-2-4)" width="342.87" y="720.39" x="23.391" fill="#323232"/>
+         <path fill="url(#linearGradient5623)" d="m-603.47-149.68v1031h776.21v-1031h-776.21zm4.0011 3h768.21v1024h-768.21v-1024z"/>
+         <ellipse style="color:#000000" rx="31.985" ry="27.984" cy="847.03" cx="-210.25" fill="url(#linearGradient5648)"/>
+         <path style="color:#000000" fill="#ccced1" d="m-215.93 837.01c-2.4049 0-4.3462 1.9413-4.3462 4.3462v11.351c0 2.4049 1.9413 4.3462 4.3462 4.3462h11.351c2.4049 0 4.3462-1.9413 4.3462-4.3462v-11.351c0-2.4049-1.9413-4.3462-4.3462-4.3462h-11.351zm0.3835 1.6619h10.584c1.6957 0 3.0679 1.3721 3.0679 3.0679v10.584c0 1.6957-1.3722 3.0423-3.0679 3.0423h-10.584c-1.6958 0-3.0424-1.3466-3.0424-3.0423v-10.584c0-1.6958 1.3466-3.0679 3.0424-3.0679z"/>
+        </g>
+       </g>
+      </g>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

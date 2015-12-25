@@ -1,0 +1,72 @@
+/************
+ books-index
+************/
+
+#books-index-container { text-align: center; }
+#books-index-navbar { height: auto; padding: 0.5em 0.5em 0.5em 0.5em; border-bottom: solid 5px rgba(242,242,242,0.6); }
+#books-index-navbar a { display: block; color: #000; text-decoration: none; }
+#books-index-navbar a:link { color: black; }
+#books-index-navbar a:visited { color: black; }
+#books-index-navbar a:hover { color: #ACC93D;  }
+#books-index-navbar a:focus { color: #ACC93D; }
+#books-index-navbar li { width: auto; margin-right: 1.5%; margin-left: 1.5%; display: inline-block; /* if ie7 support needed */ *display: inline; zoom: 1; }
+#books-index-list {  padding-top: 2em; }
+.cover-image-responsive { max-width: 100%; }
+
+input[type="text"] {text-align: center; font-size: 1.2em;  padding: 10px; border: solid 1px #dcdcdc; transition: box-shadow 0.3s, border 0.3s; }
+input[type="text"]:focus,
+input[type="text"].focus { border: solid 1px #707070; box-shadow: 0 0 5px 1px #969696; }
+
+.book-index-info-wrapper { border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px;display: inline-block; margin: 1em; background-color: #EDE7E4; transition: box-shadow 0.3s, border 0.3s; }
+.book-index-info-wrapper:hover { -webkit-box-shadow:  0px 0px 2px 2px #ACC93D;-moz-box-shadow:  0px 0px 2px 2px #ACC93D;box-shadow:  0px 0px 2px 2px #ACC93D; }
+.book-index-info-container { padding: 5%; }
+.index-info-cover { padding: 15%; }
+.ipad { background-size: 100%;  background-repeat:no-repeat; background-image: url(/components/books/images/ipad.svg);  }
+.index-info-row { position: relative; height: 2em; margin-top: 5%; }
+.centered { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;  }
+.index-info-votes { float: right; margin-right: 5%; color: black !important; }
+.index-info-published { float: left; margin-left: 5%; color: black !important; }
+
+/*****
+ book 
+*****/
+
+#book-container {height: 100%; padding: 3%; }
+#votes-published-wrapper { width: 100%; height: 2em; border: solid red; }
+#cover-wrapper { width: 20%; margin-top: 1em; float: left; }
+#cover { text-align: center; }
+.info-cover { padding: 15%; } 
+#title-author-wrapper { width: 75%; float: right; text-align: center; }
+#title-wrapper { float: left; width: 78%; }
+#description { margin-top: 1.5em; }
+#author-wrapper { float:right; width: 22%; }
+#author-name { margin-top: 0em; }
+.avatar.small { font-size: 16px;}
+.avatar { vertical-align: middle; width: 5em; height: 5em; display: inline-block; border-radius: 50%;  overflow: hidden; text-align: center; box-sizing: content-box; /* Borders move placeholders around */ border: 2px solid #c7b89e; }
+.avatar img { width: 5em; height: 5em; position: relative;}
+.avatar img:before { content: attr(alt); color: white; position: absolute; text-transform: uppercase; line-height: 5em; left: 0; right: 0; background:#000022; }
+.avatar .icon { font-weight: bold; line-height: 5em; width: 100%; background:red;  display: inline-block; }
+.tag { background: black; color: white; border: solid #ACC93D 1px; margin: 1%; padding: 1%; border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+#introductory-contents-wrapper { width: 70%; margin: 0 5% 5% 0; float: right; }
+
+
+/***************
+ Responsiveness
+***************/
+
+/* Extra small devices (desktops, 200px and up) */
+@media (min-width: 200px) { .book-index-info-wrapper { width: 80% } }
+
+/* Extra small devices (desktops, 550px and up) */
+@media (min-width: 550px) { .book-index-info-wrapper { width: 45%; } }
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) { 
+	#books-index-navbar { border-bottom: solid 1px rgba(242,242,242,0.6); }
+	#book-navbar { border-bottom: none; }
+	#book-navbar li { margin-right: 2%; margin-left: 1%; }
+	.book-index-info-wrapper { width: 30% } 
+}
+
+/* Medium devices (desktops, 1280px and up) */
+@media (min-width: 1280px) { .book-index-info-wrapper { width: 30%; } }

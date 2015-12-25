@@ -1,0 +1,99 @@
+/************
+ Base styles
+************/
+
+html { height: 100%; font-size: 8px; }
+body { height: 100%; background-color: #F4F1EC; margin: 0; padding: 0;
+	   color: black; text-rendering: optimizeLegibility; line-height: 1.45;
+	   letter-spacing: normal; font-weight: lighter;
+	   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1,h2,h3,h4,h5,h6 { margin: 0 0 .5em; font-weight: 200; }
+h1 { font-size: 2.2em; margin-bottom: 2%;  } /* 36px */
+h2 { font-size: 1.5em; margin-bottom: 2%; } /* 28px */
+h3 { font-size: 1.375em; } /* 22px */
+h4 { font-size: 1.125em; } /* 18px */
+h5 { font-size: 1em; } /* 16px */
+h6 { font-size: .875em; } /* 14px */
+p { margin: 0 0 1.5em; line-height: 1.5; }
+blockquote { color: black; background-color: #EDE7E4; border-left: 10px solid #ACC93D; margin: 1.5em 10px; padding: 0.5em 10px; quotes: "\201C""\201D""\2018""\2019"; font-size: 1.25em; }
+blockquote:before { color: #ACC93D; content: open-quote; font-size: 4em; line-height: 0.1em; margin-right: 0.15em; vertical-align: -0.4em; font-family: 'Helvetica Neue'}
+blockquote:after { color: #ACC93D; content: close-quote; font-size: 4em; line-height: 0.1em; margin-left: 0.15em; vertical-align: -0.4em; font-family: 'Helvetica Neue'}
+blockquote p { display: inline; font-size: 1.375em;}
+hr { height: 0; margin-top: 1em; margin-bottom: 2em; border: 0; border-top: 1px solid #ddd; }
+th, td { padding: .5em 1em; vertical-align: top; text-align: left; border-bottom: 1px solid #ddd; }
+a { text-decoration: none; transition: all .7s ease-in-out; }
+ul { padding:0; text-align: center; }
+a:link { color: black; }
+a:visited { color: black; }
+a:hover { color: #ACC93D; }
+a:focus { color: #ACC93D; }
+
+/* CUSTOM SCROLL BAR */
+
+::-webkit-scrollbar { height: 4px; width: 4px; background: black; }
+::-webkit-scrollbar-track-piece  { border: 2px }
+::-webkit-scrollbar-thumb:horizontal { border: 4px solid #ACC93D; }
+::-webkit-scrollbar-thumb:vertical { border: 4px solid #ACC93D; }
+
+/**************
+ Layout styles
+**************/
+
+#navbar { height: 10%; }
+#content { min-height: 80%; }
+#footer { height: 10%; }
+#not-found-container { margin: 4em 4em 4em 4em; text-align: center; }
+
+/**************
+ Single styles
+**************/
+
+.title { text-align: center; text-transform: uppercase; }
+.img-responsive { max-width: 100%; }
+.btn { transition: all .7s ease-in-out; color: #fff; background-color: #ACC93D; display: inline-block; padding: 1.5em 1.5em; margin-bottom: 0; line-height: 1.2; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: .5em; text-decoration: none; }
+.btn.title { font-size: 1em; font-weight: 200; }
+.btn:hover { color: #ACC93D; background-color: #fff; border: 1px solid #ACC93D; }
+.btn:focus { }
+.btn:active { }
+.table { width: 100%; max-width: 100%; margin-bottom: 20px; }
+.list-unstyled { padding-left: 0; list-style: none; }
+.list-inline { padding-left: 0; margin-left: -5px; list-style: none; }
+.list-inline > li { display: inline-block; padding-right: 5px; padding-left: 5px; }
+
+/***************
+ Responsiveness
+***************/
+
+/* Extra small devices (desktops, 200px and up) */
+@media (min-width: 200px) { body { font-size: 1.4em; line-height: 2; }  }
+
+/* Medium devices (desktops, 320px and up) */
+@media (min-width: 320px) { body { font-size: 1.6em; } }
+
+/* Medium devices (desktops, 500px and up) */
+@media (min-width: 500px) { body { font-size: 1.6em; } }
+
+/* Medium devices (desktops, 640px and up) */
+@media (min-width: 640px) { }
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) { body { font-size: 1.8em; } }
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { body { font-size: 2em; } }
+
+/* Medium devices (desktops, 1280px and up) */	
+@media (min-width: 1280px) { body { font-size: 2em; } }
+
+/* Large devices (large desktops, 1600px and up) */
+@media (min-width: 1600px) { body { font-size: 2.4em; } }
+
+/* Extra large devices (extra large desktops, 2000 and up) */
+@media (min-width: 2000px) { body { font-size: 3.5em; } }
+
+/* Extra large devices (extra large desktops, 3000 and up) */
+@media (min-width: 3000px) { body { font-size: 4.5em; } }
+
+/* Extra large devices (extra large desktops, 3500 and up) */
+@media (min-width: 3500px) { body { font-size: 5.5em; } }

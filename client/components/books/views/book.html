@@ -1,0 +1,26 @@
+<div id="book-container">
+		<div id="cover-wrapper">
+			<div id="cover">
+				<div class="info-cover ipad"><img class="cover-image-responsive" ng-src="{{ book.cover }}"/></div>	
+				<div style="display:table-cell; width:50%;"><h4>{{ book.published | date : 'mediumDate' }}</
+				h4></div>
+				<div style="display:table-cell; width:50%; text-align: right;"><h4>{{ book.likes }}</h4></div>
+			</div>
+		</div>
+			<div id="title-author-wrapper">
+				<div id="title-wrapper">
+					<div id="title"><h4>{{ book.name }}</h4></div>
+					<span class="tag"> {{ book.genre.name }} </span>
+					<span class="tag">{{ book.genre.category }} </span>
+					<div id="description"><h5>{{ book.description }}</h5></div>
+				</div>
+				<div id="author-wrapper">
+					<div id="author-name"><h4>{{ book.author.name }}</h4></div>
+					<div class="avatar"> <img class="cover-image-responsive" ng-src="{{ book.author.avatar }}"/></div>	
+				</div>
+			</div>
+		<div id="introductory-contents-wrapper">
+			<hr>
+			<introductory-contents introduction="book.introduction"></introductory-contents>
+		</div>
+</div>
