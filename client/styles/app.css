@@ -49,7 +49,6 @@ a:focus { color: #ACC93D; }
  Single styles
 **************/
 
-.title { text-align: center; text-transform: uppercase; }
 .img-responsive { max-width: 100%; }
 .btn { transition: all .7s ease-in-out; color: #fff; background-color: #ACC93D; display: inline-block; padding: 1.5em 1.5em; margin-bottom: 0; line-height: 1.2; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: .5em; text-decoration: none; }
 .btn.title { font-size: 1em; font-weight: 200; }

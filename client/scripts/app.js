@@ -20,8 +20,7 @@ app.config(
           url: '/{path:.*}',
             template: '<page-not-found></page-not-found>'
         })
-
-      
+     
       $locationProvider.html5Mode({
         enabled: true
       }); 
@@ -49,13 +48,6 @@ app.directive('navbar', function($location) {
         ];
       }
     }  
-  };
-});
-
-app.directive('footer', function() {
-  return {
-    restrict: 'A',
-    templateUrl: 'views/footer.html'
   };
 });
 

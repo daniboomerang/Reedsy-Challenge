@@ -29,4 +29,3 @@ books.config(function($stateProvider, $urlRouterProvider) {
 })
 
 
-
