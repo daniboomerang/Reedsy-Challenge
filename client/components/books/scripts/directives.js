@@ -9,10 +9,10 @@ booksDirectives.directive('booksIndexNavbar', function() {
   };
 });
 
-booksDirectives.directive('booksIndexPagination', function() {
+booksDirectives.directive('pagination', function() {
   return {
     restrict: 'E',
-    templateUrl: 'components/books/views/books-index-pagination.html'
+    templateUrl: 'components/books/views/pagination.html'
   };
 });
 
@@ -37,6 +37,33 @@ booksDirectives.directive('book', function($state, Books) {
       Books.open(bookName).then(function(book) {
         $scope.book = book;
       });
+    }
+  };
+});
+
+booksDirectives.directive('relatedBooks', function($state, Books) {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/books/views/related-books.html',
+    scope: { book: '=' },
+    controller: function($scope) {
+      // relatedBooks finds 3 books with the same genre and/or category
+      // @ One way data binding
+      Books.list().then(function(books) {
+        $scope.relatedBooks = createRelatedBooksList(books);
+        console.log($scope.relatedBooks);
+      }, function(reason) { alert('Failed: ' + reason); });
+
+      function createRelatedBooksList(books){
+        var relatedBooks = [];
+        for (var i=0; i < books.length; i++){
+          if ((books[i].name != $scope.book.name) && (books[i].genre.name == $scope.book.genre.name) &&
+              (books[i].genre.category == $scope.book.genre.category)){
+            relatedBooks.push(books[i]);
+          }
+        }
+        return relatedBooks;
+      }
     }
   };
 });
@@ -91,10 +118,6 @@ booksDirectives.directive('booksIndex', function(Books, $q, $filter) {
         $scope.setPage = function (page) {  $scope.currentPage = page; };
         $scope.setLast = function (lastPage){ $scope.pages = [lastPage -4 ,lastPage- 3, lastPage-2,lastPage -1,lastPage]; $scope.currentPage = lastPage; }
         $scope.setFirst = function (firstPage){ $scope.pages = [firstPage, firstPage +1 ,firstPage +2, firstPage +3,firstPage +4]; $scope.currentPage = firstPage; }
-        
-        /*********/
-        /* init  */
-        /*********/
         
         /**************************/
         /**************************/

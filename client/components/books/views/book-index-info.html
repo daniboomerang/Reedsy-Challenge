@@ -1,9 +1,12 @@
-<div class="book-index-info-container">
-	<div class="index-info-cover ipad"><img class="cover-image-responsive" ng-src="{{ cover }}"/></div>
-	<div class="index-info-row"> <div class="title centered"><h5>{{ name }}</h5></div> </div>
-	<div class="index-info-row"><div class="author centered"><h6>By {{ author }}<h6></div></div>
-	<div class="index-info-row">
-		<div class="votes">{{ votes }}</div>
+<div class="book-info-container">
+	<div class="info-cover ipad"><img class="cover-image-responsive" ng-src="{{ cover }}"/></div>
+	<div class="info-row"> <div class="title centered"><h5>{{ name }}</h5></div> </div>
+	<div class="info-row"><div class="author centered"><h6>By {{ author }}<h6></div></div>
+	<div class="info-row">
+		<div class="votes-wrapper">
+			<div class="votes">{{ votes }} </div>
+			<div class="like"></div>
+		</div>
 		<div class="published">{{ published | timeAgo }}</div>
 	<div>
 </div>

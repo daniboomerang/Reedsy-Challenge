@@ -3,7 +3,7 @@
 	    <books-index-navbar></books-index-navbar>
 	</div>
 	<div id="books-index-list">
-		<div class="book-index-info-wrapper"
+		<div class="book-info-wrapper"
 			ng-repeat="book in pagedItems[currentPage] ">
 			<a ui-sref="books.open({ bookName: book.name.split(' ').join('-') })">
 				<!-- book-index-info receives the parameters to display. One way data Binfing with @ -->
@@ -13,7 +13,7 @@
   	</div>
   	<div id="books-index-footer">
 	    <div id="pagination-wrapper">
-	        <books-index-pagination></books-index-pagination>
+	        <pagination></pagination>
 	    </div>
 	</div>
 </div>

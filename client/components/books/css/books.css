@@ -3,20 +3,21 @@
 ************/
 
 #books-index-container { text-align: center; }
-#books-index-navbar { height: auto; padding: 0.5em 0.5em 0.5em 0.5em; border-bottom: solid 5px rgba(242,242,242,0.6); }
+#books-index-navbar { height: auto; border-bottom: solid 5px rgba(242,242,242,0.6); }
 #books-index-navbar a { display: block; color: #000; text-decoration: none; }
 #books-index-navbar a:link { color: black; }
 #books-index-navbar a:visited { color: black; }
 #books-index-navbar a:hover { color: #ACC93D;  }
 #books-index-navbar a:focus { color: #ACC93D; }
 #books-index-navbar li { width: auto; margin-right: 1.5%; margin-left: 1.5%; display: inline-block; /* if ie7 support needed */ *display: inline; zoom: 1; }
+#books-index-menu { padding: 0.5em 0.5em 0.5em 0.5em; }
 #books-index-list {  padding-top: 0.5em; }
 .cover-image-responsive { max-width: 100%; }
 
-.book-index-info-wrapper { border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px;display: inline-block; margin: 1em; background-color: #EDE7E4; transition: box-shadow 0.3s, border 0.3s; }
-.book-index-info-wrapper:hover { -webkit-box-shadow:  0px 0px 2px 2px #ACC93D;-moz-box-shadow:  0px 0px 2px 2px #ACC93D;box-shadow:  0px 0px 2px 2px #ACC93D; }
-.book-index-info-container { padding: 5%; }
-.index-info-row { position: relative; height: 2em; margin-top: 5%; }
+.book-info-wrapper { border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px;display: inline-block; margin: 1em; background-color: #EDE7E4; transition: box-shadow 0.3s, border 0.3s; }
+.book-info-wrapper:hover { -webkit-box-shadow:  0px 0px 2px 2px #ACC93D;-moz-box-shadow:  0px 0px 2px 2px #ACC93D;box-shadow:  0px 0px 2px 2px #ACC93D; }
+.book-info-container { padding: 5%; }
+.info-row { position: relative; height: 2em; margin-top: 5%; }
 .centered { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;  }
 .title { line-height: 1.6em; padding: 0.5em 0 0.5em 0; }
 .author { line-height: 1.1em; padding: 0.5em 0 0.5em 0; }
@@ -39,7 +40,9 @@ ul.pagination li a.current { text-shadow:0px 1px #4E802C; border-color:#ACC93D; 
 
 /*/////////*/
 .ipad { padding: 15%; background-size: 100%;  background-repeat:no-repeat; background-image: url(/components/books/images/ipad.svg);  }
-.votes { float: right; margin-right: 5%; color: black !important; }
+.votes-wrapper { float: right; margin-right: 5%; color: black !important; }
+.votes { display: inline-block; }
+.like { display: inline-block; width: 1em; height: 1em; background-size: 100%;  background-repeat:no-repeat; background-image: url(/images/like.svg); }
 .published { float: left; margin-left: 5%; color: black !important; }
 .genre-wrapper { padding-top: 1%; }
 /*/////////*/
@@ -48,22 +51,28 @@ ul.pagination li a.current { text-shadow:0px 1px #4E802C; border-color:#ACC93D; 
  book 
 *****/
 
-#book-container {height: 100%; padding: 3%; }
-#votes-published-wrapper { width: 100%; height: 2em; border: solid red; }
-#cover-wrapper { width: 20%; float: left; }
-#cover { text-align: center; }
-#title-author-wrapper { width: 75%; float: right; text-align: center; }
-#title-wrapper { float: left; width: 70%; }
+#book-container { width: 100%; }
+#book-navbar { padding: 0%; }
+#book-content { padding: 3%; }
+#votes-published-wrapper { height: 2em; }
+#cover-wrapper { }
+#cover { }
+#title-wrapper { margin-left: 15%; width: 70%; }
 #description { margin-top: 1.5em; }
-#author-wrapper { float:right; width: 30%; }
-#author-name { margin-top: 0em; }
-.avatar.small { font-size: 16px;}
-.avatar { vertical-align: middle; width: 5em; height: 5em; display: inline-block; border-radius: 50%;  overflow: hidden; text-align: center; box-sizing: content-box; /* Borders move placeholders around */ border: 2px solid #c7b89e; }
-.avatar img { width: 5em; height: 5em; position: relative;}
+#author-wrapper { width: 30%; padding: 1%; }
+#author-name { margin-top: 0em; display: inline-block; }
+.avatar { vertical-align: middle; width: 3.5em; height: 3.5em; display: inline-block; border-radius: 50%;  overflow: hidden; text-align: center; box-sizing: content-box; /* Borders move placeholders around */ border: 2px solid #c7b89e; }
+.avatar img { width: 3.5em; height: 3.5em; position: relative;}
 .avatar img:before { content: attr(alt); color: white; position: absolute; text-transform: uppercase; line-height: 5em; left: 0; right: 0; background:#000022; }
-.avatar .icon { font-weight: bold; line-height: 5em; width: 100%; background:red;  display: inline-block; }
-.tag { background: black; color: white; border: solid #ACC93D 1px; margin: 1%; padding: 1%; border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
-#introductory-contents-wrapper { width: 70%; margin: 0 5% 5% 0; float: right; }
+.tag { background: black; color: white; border: solid #ACC93D 1px; margin: 0.8%; padding: 0.8%; border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+.tag-small { background: rgba(0,0,0,0.8); color: white; border: solid #ACC93D 1px; margin: 0.5%; padding: 0.5%; border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+
+#introductory-contents-wrapper { width: 80%; margin-left: 10%; }
+#related-books { padding: 2%;  }
+.related-book-info-wrapper:hover { -webkit-box-shadow:  0px 0px 2px 2px #ACC93D;-moz-box-shadow:  0px 0px 2px 2px #ACC93D;box-shadow:  0px 0px 2px 2px #ACC93D; }
+.related-book-info-wrapper { border-radius: 10px 10px 10px 10px; -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px;display: inline-block; background-color: #F4F1EC; transition: box-shadow 0.3s, border 0.3s; }
+.related-book-info-container { padding: 5%; }
+.related-books-tag-info { padding: 1.5%; background: #EDE7E4; border-bottom: solid #ACC93D 1px; }
 
 /***************
  Responsiveness
@@ -71,16 +80,23 @@ ul.pagination li a.current { text-shadow:0px 1px #4E802C; border-color:#ACC93D; 
 
 /* Extra small devices (desktops, 200px and up) */
 @media (min-width: 200px) {
-	.book-index-info-wrapper { width: 35% } 
+	.book-info-wrapper { width: 42% } 
 	#pagination-wrapper	 { margin-left: 0%; width: 100%; }
 	#books-index-container { text-align: center; margin-bottom: 20%; }
+	#cover-wrapper { width: 40%; margin-left: 30%; }
+	.related-book-info-wrapper { width: 42% } 
+	#votes-published-wrapper { width: 50%; margin-left: 25%; }
+	
+	.related-book-info-wrapper { margin: 0.5em; padding: 0 6% 0 6%;  }
 }
 
 /* Extra small devices (desktops, 550px and up) */
 @media (min-width: 550px) {
-	.book-index-info-wrapper { width: 26%; }
+	.book-info-wrapper { width: 28%; }
 	#pagination-wrapper	 { margin-left: 10%; width: 80%; }
 	#books-index-container { margin-bottom: 15%; }
+	.related-book-info-wrapper { width: 28%; }
+	#votes-published-wrapper { width: 50%; margin-left: 25%; } 
 }
 
 /* Medium devices (desktops, 768px and up) */
@@ -88,10 +104,17 @@ ul.pagination li a.current { text-shadow:0px 1px #4E802C; border-color:#ACC93D; 
 	#books-index-navbar { border-bottom: solid 2px #EDE7E4; background: #EDE7E4; }
 	#book-navbar { border-bottom: none; }
 	#book-navbar li { margin-right: 2%; margin-left: 1%; }
-	.book-index-info-wrapper { width: 25% } 
 	#books-index-container { margin-bottom: 10%; }
+	#cover-wrapper { width: 20%; margin-left: 40% }
+	#votes-published-wrapper { width: 30%; margin-left: 35%; }
+	
+	.related-book-info-wrapper { margin: 0.5em; padding: 0 2% 0 2%;  }
 }
 
 /* Medium devices (desktops, 1280px and up) */
-@media (min-width: 1024px) { .book-index-info-wrapper { width: 20%; } }
-
+@media (min-width: 1024px) {
+	.book-info-wrapper { width: 21%; }
+	#cover-wrapper { width: 15%; margin-left: 42.5% }
+	.related-book-info-wrapper { width: 18%; }
+	#votes-published-wrapper { width: 20%; margin-left: 40%; } 
+}

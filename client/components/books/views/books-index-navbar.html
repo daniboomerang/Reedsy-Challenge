@@ -1,6 +1,9 @@
 <div id="books-index-navbar">
+	<div id="books-index-menu" class="scrollable">
 	<ul>
-		<li><input type="text" id="query" placeholder="Search" ng-change="search()" ng-model="query"/></li>
+		<li>
+			<input type="text" id="query" placeholder="Search" ng-change="search()" ng-model="query"/>
+		</li>
 		<li>
 			<b>Category:</b>
 	    	<select name="category" ng-model="categoryFilter" ng-change="filterByCategory()">
@@ -15,8 +18,7 @@
 		      <option value="">All</option>
 		    </select>
 		</li>
-		<li>Total: {{ filteredItems.length }}</li>
-	<ul>
-	<!--<hr>
-	<div id="search-wrapper"><input type="text" id="query" placeholder="Search" ng-change="search()" ng-model="query"/></div>-->
+	</ul>
+	</div>
+	<div><h5>{{ filteredItems.length }} results found</h5></div>	
 </div>
