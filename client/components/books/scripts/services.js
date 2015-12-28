@@ -1,3 +1,5 @@
+'use strict'
+
 var booksServices = angular.module('booksServices', []);
 
 booksServices.factory('Books', function ($http, $q, $state, $location){

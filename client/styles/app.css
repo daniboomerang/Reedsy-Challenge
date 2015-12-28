@@ -2,7 +2,7 @@
  Base styles
 ************/
 
-html { height: 100%; font-size: 8px; }
+html { height: 100%; font-size: 9px; }
 body { height: 100%; background-color: #F4F1EC; margin: 0; padding: 0;
 	   color: black; text-rendering: optimizeLegibility; line-height: 1.45;
 	   letter-spacing: normal; font-weight: lighter;
@@ -20,6 +20,7 @@ blockquote { color: black; background-color: #EDE7E4; border-left: 10px solid #A
 blockquote:before { color: #ACC93D; content: open-quote; font-size: 4em; line-height: 0.1em; margin-right: 0.15em; vertical-align: -0.4em; font-family: 'Helvetica Neue'}
 blockquote:after { color: #ACC93D; content: close-quote; font-size: 4em; line-height: 0.1em; margin-left: 0.15em; vertical-align: -0.4em; font-family: 'Helvetica Neue'}
 blockquote p { display: inline; font-size: 1.375em;}
+select { text-align: center; font-size: 1.2em;  padding: 10px; border: solid 1px #dcdcdc; transition: box-shadow 0.3s, border 0.3s;  }
 hr { height: 0; margin-top: 1em; margin-bottom: 2em; border: 0; border-top: 1px solid #ddd; }
 th, td { padding: .5em 1em; vertical-align: top; text-align: left; border-bottom: 1px solid #ddd; }
 a { text-decoration: none; transition: all .7s ease-in-out; }

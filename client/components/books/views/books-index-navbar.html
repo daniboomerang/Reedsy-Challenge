@@ -1,0 +1,22 @@
+<div id="books-index-navbar">
+	<ul>
+		<li><input type="text" id="query" placeholder="Search" ng-change="search()" ng-model="query"/></li>
+		<li>
+			<b>Category:</b>
+	    	<select name="category" ng-model="categoryFilter" ng-change="filterByCategory()">
+	    		<option ng-repeat="category in categoriesList" value="{{ category }}"> {{ category }} </option>
+		     	<option value="">All</option>
+		    </select>
+		</li>
+		<li>
+			<b>Genre:</b>
+	    	<select name="genre" ng-model="genreFilter" ng-change="filterByGenre()">
+		      <option ng-repeat="genre in genresList" value="{{ genre }}"> {{ genre }} </option>
+		      <option value="">All</option>
+		    </select>
+		</li>
+		<li>Total: {{ filteredItems.length }}</li>
+	<ul>
+	<!--<hr>
+	<div id="search-wrapper"><input type="text" id="query" placeholder="Search" ng-change="search()" ng-model="query"/></div>-->
+</div>

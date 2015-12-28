@@ -1,59 +1,18 @@
+'use strict'
+
 var booksDirectives = angular.module('booksDirectives', ['booksServices']);  
 
-booksDirectives.directive('booksIndex', function(Books, $q, $filter) {
+booksDirectives.directive('booksIndexNavbar', function() {
   return {
     restrict: 'E',
-    templateUrl: 'components/books/views/books-index.html',
-    controller: function($scope) {
-      Books.list().then(function(books) {
-        $scope.books = books;
-        setupPagination()
-      }, function(reason) {
-        alert('Failed: ' + reason);
-      });
-      
-      function setupPagination(){ 
-        
-        /*********/
-        /* init  */
-        /*********/
-        $scope.sortingOrder = "name"; $scope.reverse = false; $scope.filteredItems = []; $scope.groupedItems = []; $scope.itemsPerPage = 6; $scope.pagedItems = []; $scope.currentPage = 0;
-        /*********/
+    templateUrl: 'components/books/views/books-index-navbar.html'
+  };
+});
 
-        var searchMatch = function (haystack, needle) { if (!needle) { return true; } return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1; };
-        // init the filtered items
-        $scope.search = function () {
-          $scope.filteredItems = $filter('filter')($scope.books, function (item) {
-            var searchByAuthorAndTitle = { 'bookName': item.name, 'authorName': item.author.name };
-            for(var attr in searchByAuthorAndTitle) {
-                if (searchMatch(searchByAuthorAndTitle[attr], $scope.query))
-                  return true;
-            }
-            return false;
-          });
-          // take care of the sorting order
-          if ($scope.sortingOrder !== '') { $scope.filteredItems = $filter('orderBy')($scope.filteredItems, $scope.sortingOrder, $scope.reverse); }
-          $scope.currentPage = 0;
-          $scope.groupToPages();  // now group by pages
-        };
-        
-        // calculate page in place
-        $scope.groupToPages = function () {
-            $scope.pagedItems = [];
-            for (var i = 0; i < $scope.filteredItems.length; i++) {
-                if (i % $scope.itemsPerPage === 0) { $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [ $scope.filteredItems[i] ]; }
-                else { $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)].push($scope.filteredItems[i]); }
-            }
-        };
-        
-        $scope.range = function (start, end) { var ret = []; if (!end) { end = start; start = 0; } for (var i = start; i < end; i++) { ret.push(i); } return ret; };
-        $scope.prevPage = function () { if ($scope.currentPage > 0) { $scope.currentPage--; } };
-        $scope.nextPage = function () { if ($scope.currentPage < $scope.pagedItems.length - 1) { $scope.currentPage++; } };
-        $scope.setPage = function () { $scope.currentPage = this.n; };
-        $scope.sort_by = function(newSortingOrder) { if ($scope.sortingOrder == newSortingOrder) { $scope.reverse = !$scope.reverse; } $scope.sortingOrder = newSortingOrder; };
-        $scope.search();
-      };
-    }
+booksDirectives.directive('booksIndexPagination', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/books/views/books-index-pagination.html'
   };
 });
 
@@ -78,6 +37,157 @@ booksDirectives.directive('book', function($state, Books) {
       Books.open(bookName).then(function(book) {
         $scope.book = book;
       });
+    }
+  };
+});
+
+booksDirectives.directive('booksIndex', function(Books, $q, $filter) {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/books/views/books-index.html',
+    controller: function($scope) {
+      Books.list().then(function(books) {
+        $scope.books = books;
+        init();
+      }, function(reason) { alert('Failed: ' + reason); });
+      
+      function init(){ 
+
+        /**************/
+        /**************/
+        // PAGINATION //
+        /**************/
+        /**************/
+
+        var itemsPerPage = 12; 
+        $scope.pagedItems = []; $scope.currentPage = 0;
+        $scope.pages = [0,1,2,3,4];
+
+        $scope.groupToPages = function () {
+          $scope.pagedItems = [];
+          for (var i = 0; i < $scope.filteredItems.length; i++) {
+              if (i % itemsPerPage === 0) { $scope.pagedItems[Math.floor(i / itemsPerPage)] = [ $scope.filteredItems[i] ]; }
+              else { $scope.pagedItems[Math.floor(i / itemsPerPage)].push($scope.filteredItems[i]); }
+          }
+        };     
+        $scope.prevPage = function () { 
+          if ($scope.currentPage > 0) { $scope.currentPage--; }
+          if (($scope.currentPage <= $scope.pages[0]) && ($scope.currentPage != 0)){
+            for (var i=0; i < $scope.pages.length; i++){
+              $scope.pages[i] = $scope.pages[i]-3;
+            }
+          }
+        };
+        $scope.nextPage = function () { 
+          if ($scope.currentPage < $scope.pagedItems.length - 1) { 
+            $scope.currentPage++;
+          }
+          if (($scope.currentPage >= $scope.pages[$scope.pages.length - 1 ]) && ($scope.currentPage != $scope.pagedItems.length -1)){
+            for (var i=0; i < $scope.pages.length; i++){
+              $scope.pages[i] = $scope.pages[i]+3;
+            }
+          }
+        };
+        $scope.setPage = function (page) {  $scope.currentPage = page; };
+        $scope.setLast = function (lastPage){ $scope.pages = [lastPage -4 ,lastPage- 3, lastPage-2,lastPage -1,lastPage]; $scope.currentPage = lastPage; }
+        $scope.setFirst = function (firstPage){ $scope.pages = [firstPage, firstPage +1 ,firstPage +2, firstPage +3,firstPage +4]; $scope.currentPage = firstPage; }
+        
+        /*********/
+        /* init  */
+        /*********/
+        
+        /**************************/
+        /**************************/
+        // SEARCHING && FILTERING //
+        /**************************/
+        /**************************/
+
+        $scope.categoryFilter = '';
+        $scope.categoriesList = ['Fiction', 'Non-Fiction'];
+        $scope.genreFilter = '';
+        $scope.genresList = createGenresList($scope.books);
+
+        $scope.filteredItems = [];
+
+        function createGenresList (books){
+          var genresList = [];
+          var genresListObject = {}
+          for (var i=0; i < books.length; i++){
+            if (genresListObject[books[i].genre.name] == undefined){
+              genresListObject[books[i].genre.name] = true;
+              genresList.push(books[i].genre.name) 
+            }
+          }
+          return genresList;
+        }
+
+        var cleanSearch = function(){ $scope.query = '' };
+
+        $scope.search = function () {
+          
+          var searchMatch = function (haystack, needle) { if (!needle) { return true; } return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1; };
+          cleanCategoryFilter();
+          cleanGenreFilter();
+
+          $scope.filteredItems = $filter('filter')($scope.books, function (item) {
+            var searchByAuthorAndTitle = { 'bookName': item.name, 'authorName': item.author.name };
+            for(var attr in searchByAuthorAndTitle) {
+                if (searchMatch(searchByAuthorAndTitle[attr], $scope.query))
+                  return true;
+            }
+            return false;
+          });
+          $scope.currentPage = 0;
+          $scope.groupToPages();  // now group by pages
+
+        };
+        
+        var cleanCategoryFilter = function(){ $scope.categoryFilter = ''};
+
+        $scope.filterByCategory = function (category) {
+          cleanSearch();
+          cleanGenreFilter();
+          if ($scope.categoryFilter == '') { 
+            $scope.filteredItems = $scope.books;
+          }
+          else {
+            $scope.filteredItems = $filter('filter')($scope.books, function (item) {
+              var criteria = { 'bookCategory': item.genre.category };
+              for(var attr in criteria) {
+                if (criteria[attr] == $scope.categoryFilter) { return true; }
+              }
+              return false;
+            });
+          }
+          $scope.currentPage = 0;
+          $scope.pages = [0,1,2,3,4];
+          $scope.groupToPages();  // now group by pages
+        };
+
+        var cleanGenreFilter = function(){ $scope.genreFilter = ''};
+
+        $scope.filterByGenre = function (genre) {
+          cleanSearch();
+          cleanCategoryFilter();
+          if ($scope.genreFilter == '') { 
+            $scope.filteredItems = $scope.books;
+          }
+          else {
+            $scope.filteredItems = $filter('filter')($scope.books, function (item) {
+              var criteria = { 'bookGenre': item.genre.name };
+              for(var attr in criteria) {
+                if (criteria[attr] == $scope.genreFilter) { return true; }
+              }
+              return false;
+            });
+          }
+          $scope.currentPage = 0;
+          $scope.pages = [0,1,2,3,4];
+          $scope.groupToPages();  // now group by pages
+        };
+
+        $scope.search();
+      };
     }
   };
 });
