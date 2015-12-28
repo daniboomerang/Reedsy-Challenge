@@ -1,6 +1,6 @@
 <div ng-hide="relatedBooks.length == 0" >
 	<div class="related-books-tag-info text-centered">
-		<h5>{{ relatedBooks.length }} books related for the category <b>'{{ book.genre.name }}' / '{{ book.genre.category }}'</b>  </h5>
+		<h5>{{ relatedBooks.length }} related book<span ng-hide="relatedBooks.length == 1">s</span> for the category <b>'{{ book.genre.name }}' / '{{ book.genre.category }}'</b>  </h5>
 	</div>
     <ul id="related-books" class="scrollable">
         <li class="related-book-info-wrapper" ng-repeat="book in relatedBooks">
