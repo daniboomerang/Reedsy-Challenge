@@ -2,9 +2,8 @@
 	<div id="cover-wrapper">
 		<div id="cover">
 			<div class="ipad"><img class="cover-image-responsive" ng-src="{{ book.cover }}"/></div>	
-			<div class="published"><h5>{{ book.published | date : 'mediumDate' }}</
-			h5></div>
-			<div class="votes"><h5>{{ book.likes }}</h5></div>
+			<div class=""><div><h5>Published {{ book.published | timeAgo }}</h5></div></div>
+			<div class=""><h5>Votes: {{ book.likes }}</h5></div>
 		</div>
 	</div>
 		<div id="title-author-wrapper">

@@ -1,8 +1,6 @@
 'use strict'
 
-var books = angular.module('books', [
-	'booksDirectives',
-]);  
+var books = angular.module('books', ['booksDirectives']);  
 
 books.config(function($stateProvider, $urlRouterProvider) {
 

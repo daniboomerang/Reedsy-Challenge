@@ -1,6 +1,6 @@
 'use strict'
 
-var booksDirectives = angular.module('booksDirectives', ['booksServices']);  
+var booksDirectives = angular.module('booksDirectives', ['booksServices', 'yaru22.angular-timeago']);
 
 booksDirectives.directive('booksIndexNavbar', function() {
   return {
