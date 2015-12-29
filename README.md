@@ -38,12 +38,12 @@ License
 
 [MIT]
 
-   [reedsy-challenge.herokuapp.com]: <http://www.reedsy-challenge.herokuapp.com>
+   [reedsy-challenge.herokuapp.com]: <https://reedsy-challenge.herokuapp.com/>
    [reedsy.com]: <https://reedsy.com/>
    [git-repo-url]: <https://github.com/daniboomerang/Reedsy-Challenge>
    [node.js]: <http://nodejs.org>
    [express]: <http://expressjs.com>
    [angularJS]: <http://angularjs.org>
-   [MIT]: <https://github.com/daniboomerang/daniboomerang/blob/master/LICENSE>
+   [MIT]: <https://github.com/daniboomerang/Reedsy-Challenge/blob/master/LICENSE>
 
 
