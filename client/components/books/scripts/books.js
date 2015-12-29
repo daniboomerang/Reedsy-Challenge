@@ -26,6 +26,6 @@ books.config(function($stateProvider, $urlRouterProvider) {
 	        	url: '/:bookName',
 				template: '<book></book>'	// This is the Book
         	})
-})
+});
 
 

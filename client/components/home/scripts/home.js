@@ -1,3 +1,5 @@
+'use strict'
+
 var home = angular.module('home', ['homeDirecives']);  
 
 home.config(function($stateProvider, $urlRouterProvider) {
@@ -12,4 +14,4 @@ home.config(function($stateProvider, $urlRouterProvider) {
 	    	url: '/',
 	        template: '<home></home>'
 	    })
-})
+});

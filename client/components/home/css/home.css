@@ -1,1 +1,11 @@
-#home-container { padding: 4em 4em 4em 4em; text-align: center; }
+#home-container { }
+.home-section { padding: 1em 2em 1em 2em; }
+.home-subsection { padding: 0.2em 2em 0.2em 2em; }
+#site-description { font-size: 1em; }
+#reedsy-challenge { text-align: center; background: #EDE7E4; }
+#front-end { background: #EDE7E4; }
+
+/* Extra small devices (desktops, 200px and up) */
+@media (min-width: 200px) { }
+/* Medium devices (desktops, 1024px and up) */
+@media (min-width: 1024px) { }

@@ -15,8 +15,12 @@ h3 { font-size: 1.375em; } /* 22px */
 h4 { font-size: 1.125em; } /* 18px */
 h5 { font-size: 1em; } /* 16px */
 h6 { font-size: .875em; } /* 14px */
-p { margin: 0 0 1.5em; line-height: 1.5; }
-blockquote { color: black; background-color: #EDE7E4; border-left: 10px solid #ACC93D; margin: 1.5em 10px; padding: 0.5em 10px; quotes: "\201C""\201D""\2018""\2019"; font-size: 1.25em; }
+p { margin: 0em 0em 1.5em; line-height: 1.5; }
+b { font-weight: 200; }
+pre { font-family: "Courier 10 Pitch", Courier, monospace; font-size: 95%; line-height: 140%; white-space: pre; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; }           
+code { font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; font-size: 95%; line-height: 140%; white-space: pre; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -o-pre-wrap; background: #faf8f0; }
+#content code { display: block; padding: 0.5em 1em; border: 1px solid #bebab0; }
+blockquote { text-align: center; color: black; background-color: #EDE7E4; border-left: 10px solid #ACC93D; margin: 1.5em 10%; padding: 0.5em 10px; quotes: "\201C""\201D""\2018""\2019"; font-size: 1em; }
 blockquote:before { color: #ACC93D; content: open-quote; font-size: 4em; line-height: 0.1em; margin-right: 0.15em; vertical-align: -0.4em; font-family: 'Helvetica Neue'}
 blockquote:after { color: #ACC93D; content: close-quote; font-size: 4em; line-height: 0.1em; margin-left: 0.15em; vertical-align: -0.4em; font-family: 'Helvetica Neue'}
 blockquote p { display: inline; font-size: 1.375em;}
@@ -29,7 +33,12 @@ a:link { color: black; }
 a:visited { color: black; }
 a:hover { color: #ACC93D; }
 a:focus { color: #ACC93D; }
+.list-text li { position: relative; padding-left: 2em; text-align: left; }
+.list-text li:before { content: '\2022'; color: #ACC93D; position: absolute; left: 0.5em; /* same as ul padding-left */ }
+.sublist-text li { position: relative; padding-left: 4em; }
+.sublist-text li:before { content: '\00B0'; color: #ACC93D; position: absolute; left: 2em; /* same as ul padding-left */ }
 .text-centered { text-align: center; }
+.text-underlined { text-decoration: underline; }
 /* For scrollable navbars */
 .scrollable { margin: 0; white-space: nowrap; overflow-x: scroll; overflow-y: hidden; background: #EDE7E4; }
 

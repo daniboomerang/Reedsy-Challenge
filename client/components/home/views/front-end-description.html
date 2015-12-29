@@ -1,0 +1,133 @@
+
+<div id="front-end" class="home-section">
+	<h2 class="text-underlined">The front-end: </h2>
+	<ul class="list-unstyled list-text">
+    	<li>Component Pattern with AngularJS (only directives)</li>
+    	<li>It is composed of 3 modules: <b>app.js, home.js, books.js</b></li>
+    	<li>Each module has the same folder structure:
+    		<ul class="list-unstyled sublist-text">
+					<li><b>scripts</b> folder</li>
+					<li><b>css</b> folder</li>
+        		<li><b>views</b> folder</li>
+        		<li><b>data</b> folder (Optional)</li>
+        		<li><b>images</b> folder (Optional)</li>
+        	</ul>
+        </li>
+		<li>Fully Responsive </li>
+		<li>State Machine routing with angular-ui </li>
+    </ul>
+    
+    <div class="home-subsection">
+		<h3><b>app.js</b></h3>
+		<ul class="list-unstyled list-text">
+	    	<li>Main module that contains home and books</li>
+    	</ul>
+		<pre><code ng-non-bindable>
+var app = angular.module('app', [
+'ui.router',
+'home',
+'books'
+]);
+		</code></pre>
+		<ul class="list-unstyled list-text">
+			<li>It has its own router</li>
+			<li>It controls 404 page not found errors</li>
+    	</ul>
+    	<pre><code ng-non-bindable>
+app.config([ '$stateProvider', '$urlRouterProvider', '$locationProvider',
+function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+$stateProvider
+	    
+//////////////////////////
+// State Configurations //
+//////////////////////////
+	    
+    .state('404', {
+      url: '/{path:.*}',
+        template: '<page-not-found></page-not-found>'
+    })
+ 
+	$locationProvider.html5Mode({
+	enabled: true
+	}); 
+}
+]);
+		</code></pre>
+	</div>
+	<div class="home-subsection">
+		<h3><b>home.js</b></h3>
+		<ul class="list-unstyled list-text">
+	    	<li>Module home contains a description of the site</li>
+			<li>It has its own router</li>
+    	</ul>
+		<pre><code ng-non-bindable>
+home.config(function($stateProvider, $urlRouterProvider) {
+
+$stateProvider
+
+//////////////////////////
+// State Configurations //
+//////////////////////////
+    
+     .state('home', {
+    	url: '/',
+        template: '<home></home>'
+    })
+});
+		</code></pre>
+	</div>
+
+	<div class="home-subsection">
+		<h3><b>books.js</b></h3>
+		<ul class="list-unstyled list-text">
+	    	<li>This modules displays the books</li>
+			<li>It has its own router</li>
+			<li>It contains 2 pages:
+				<ul class="list-unstyled sublist-text">
+ 					<li><b>/books</b>: Is the index of books</li>
+ 					<li><b>/books/:bookName</b> Receives in the <b>URL</b> the :bookName as a <b>parameter</b> and displays it</li>
+            	</ul>
+			</li>
+    	</ul>
+		<pre><code ng-non-bindable>
+books.config(function($stateProvider, $urlRouterProvider) {
+
+$urlRouterProvider.when('/books/', '/books');
+
+$stateProvider
+    
+//////////////////////////
+// State Configurations //
+//////////////////////////
+    
+    .state('books', {
+    	abstract: true,
+    	url: '/books',
+    	template: '<ui-view></ui-view>'// This is the 'Web Component' books
+		
+    })	
+    	// Nested Views
+    	.state('books.list', {
+        	url: '',
+        	template: '<books-index></books-index>'// This is the books Index
+    	})
+    	.state('books.open', {
+        	url: '/:bookName',
+        	template: '<book></book>'// This is the Book
+    	})
+});
+		</code></pre>
+	</div>
+	<ul class="list-unstyled list-text">
+    	<li>Service <b>'Books'</b> provides 2 methods to READ the resource books
+    		<ul class="list-unstyled sublist-text">
+					<li><b>list</b>: provides all the books. It <b>mocks</b> a database API and gets the books from the file <b>books.json</b></li>
+					<li><b>open(bookName)</b>: provides the books 'bookName'. It <b>mocks</b> a database API and gets the book from the file <b>books.json</b></li>
+					<li>Have a look to the service here: <a href="https://github.com/daniboomerang/Reedsy-Challenge/blob/master/client/components/books/scripts/services.js" href="_blank_"><b>link to the service</b></a>
+					</li>
+        	</ul>
+    	</li>
+	</ul>
+</div>
+
