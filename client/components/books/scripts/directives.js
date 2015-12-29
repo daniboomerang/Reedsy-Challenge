@@ -2,30 +2,6 @@
 
 var booksDirectives = angular.module('booksDirectives', ['booksServices', 'yaru22.angular-timeago']);
 
-booksDirectives.directive('booksIndexNavbar', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'components/books/views/books-index-navbar.html'
-  };
-});
-
-booksDirectives.directive('pagination', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'components/books/views/pagination.html'
-  };
-});
-
-booksDirectives.directive('bookIndexInfo', function() {
-  return {
-    restrict: 'E',
-    templateUrl: 'components/books/views/book-index-info.html',
-    // Isolated scope. Input parameters from the parent. 
-    // @ One way data binding
-    scope: { cover: '@', name: '@', author: '@', votes: '@', published: '@' }
-  };
-});
-
 booksDirectives.directive('book', function($state, Books) {
   return {
     restrict: 'E',
@@ -38,6 +14,16 @@ booksDirectives.directive('book', function($state, Books) {
         $scope.book = book;
       });
     }
+  };
+});
+
+booksDirectives.directive('introductoryContents', function() {
+  return {
+    restrict: 'E',  
+    templateUrl: 'components/books/views/introductory-contents.html',
+    // Isolated scope. Input parameters from the parent. 
+    // = We receive an array of objects
+    scope: { introduction: '=' }  
   };
 });
 
@@ -65,6 +51,30 @@ booksDirectives.directive('relatedBooks', function($state, Books) {
         return relatedBooks;
       }
     }
+  };
+});
+
+booksDirectives.directive('booksIndexNavbar', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/books/views/books-index-navbar.html'
+  };
+});
+
+booksDirectives.directive('pagination', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/books/views/pagination.html'
+  };
+});
+
+booksDirectives.directive('bookIndexInfo', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'components/books/views/book-index-info.html',
+    // Isolated scope. Input parameters from the parent. 
+    // @ One way data binding
+    scope: { cover: '@', name: '@', author: '@', votes: '@', published: '@' }
   };
 });
 
@@ -212,15 +222,5 @@ booksDirectives.directive('booksIndex', function(Books, $q, $filter) {
         $scope.search();
       };
     }
-  };
-});
-
-booksDirectives.directive('introductoryContents', function() {
-  return {
-    restrict: 'E',  
-    templateUrl: 'components/books/views/introductory-contents.html',
-    // Isolated scope. Input parameters from the parent. 
-    // = We receive an array of objects
-    scope: { introduction: '=' }  
   };
 });

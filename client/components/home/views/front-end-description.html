@@ -4,7 +4,7 @@
 	<ul class="list-unstyled list-text">
     	<li>Component Pattern with AngularJS (only directives)</li>
     	<li>It is composed of 3 modules: <b>app.js, home.js, books.js</b></li>
-    	<li>Each module has the same folder structure:
+    	<li>Each module has the same <b>folder structure</b>:
     		<ul class="list-unstyled sublist-text">
 					<li><b>scripts</b> folder</li>
 					<li><b>css</b> folder</li>
@@ -14,7 +14,7 @@
         	</ul>
         </li>
 		<li>Fully Responsive </li>
-		<li>State Machine routing with angular-ui </li>
+		<li>State machine routing with <a href="https://github.com/angular-ui/ui-router" target="_blank"><b>ui-router</b></a> </li>
     </ul>
     
     <div class="home-subsection">
@@ -31,7 +31,7 @@ var app = angular.module('app', [
 		</code></pre>
 		<ul class="list-unstyled list-text">
 			<li>It has its own router</li>
-			<li>It controls 404 page not found errors</li>
+			<li>It handles <b>404 page not found errors</b></li>
     	</ul>
     	<pre><code ng-non-bindable>
 app.config([ '$stateProvider', '$urlRouterProvider', '$locationProvider',
@@ -44,9 +44,9 @@ $stateProvider
 //////////////////////////
 	    
     .state('404', {
-      url: '/{path:.*}',
-        template: '<page-not-found></page-not-found>'
-    })
+     	url: '/{path:.*}',
+     	template: '<<page-not-found>page-not-found><<page-not-found>/page-not-found>'
+     })
  
 	$locationProvider.html5Mode({
 	enabled: true
@@ -70,9 +70,9 @@ $stateProvider
 // State Configurations //
 //////////////////////////
     
-     .state('home', {
+    .state('home', {
     	url: '/',
-        template: '<home></home>'
+        template: '<<home>home><<home>/home>'
     })
 });
 		</code></pre>
@@ -81,12 +81,12 @@ $stateProvider
 	<div class="home-subsection">
 		<h3><b>books.js</b></h3>
 		<ul class="list-unstyled list-text">
-	    	<li>This modules displays the books</li>
+	    	<li>This module displays the books</li>
 			<li>It has its own router</li>
 			<li>It contains 2 pages:
 				<ul class="list-unstyled sublist-text">
- 					<li><b>/books</b>: Is the index of books</li>
- 					<li><b>/books/:bookName</b> Receives in the <b>URL</b> the :bookName as a <b>parameter</b> and displays it</li>
+ 					<li><b>/books</b>: Is the books index</li>
+ 					<li><b>/books/:bookName</b>: Receives in the <b>URL</b> the :bookName as a <b>parameter</b> and displays it</li>
             	</ul>
 			</li>
     	</ul>
@@ -104,30 +104,50 @@ $stateProvider
     .state('books', {
     	abstract: true,
     	url: '/books',
-    	template: '<ui-view></ui-view>'// This is the 'Web Component' books
+    	template: '<<ui-view>ui-view><<ui-view>/ui-view>'// This is the 'Web Component' books
 		
     })	
     	// Nested Views
     	.state('books.list', {
         	url: '',
-        	template: '<books-index></books-index>'// This is the books Index
+        	template: '<<books-index>books-index><<books-index>/books-index>'// This is the books Index
     	})
     	.state('books.open', {
         	url: '/:bookName',
-        	template: '<book></book>'// This is the Book
+        	template: '<<book>book><<book>/book>'// This is the book
     	})
 });
 		</code></pre>
-	</div>
-	<ul class="list-unstyled list-text">
-    	<li>Service <b>'Books'</b> provides 2 methods to READ the resource books
-    		<ul class="list-unstyled sublist-text">
+		<ul class="list-unstyled list-text">
+	    	<li>The books index page:
+	    		<ul class="list-unstyled sublist-text">
+					<li><b>Allows filtering by category and genre</b></li>
+					<li><b>Allows search by title and author</b></li>
+					<li><b>Is pageable on the front end side</b></li>
+					<li>Shows: <b>the number of books that match the current filter or search, </b><b>the cover image</b>, <b>the title</b>, <b>the author</b>,<b>the votes</b> and <b>the relative time for the publication date</b></li>
+        		</ul>
+	    	</li>
+	    </ul>
+	    <ul class="list-unstyled list-text">
+	    	<li>In addition to the info displayed in the index, <b>the book page shows</b>: 
+	    		<ul class="list-unstyled sublist-text">
+					<li><b>Author avatar</b></li>
+					<li><b>Introductory contents</b></li>
+					<li><b>Short description of the book</b></li>
+					<li><b>All the related books with the same genre/catergory (if any)</b></li>
+        		</ul>
+	    	</li>
+	    </ul>
+	    <ul class="list-unstyled list-text">
+	    	<li>Service <b>'Books'</b> provides 2 methods to READ the resource books
+	    		<ul class="list-unstyled sublist-text">
 					<li><b>list</b>: provides all the books. It <b>mocks</b> a database API and gets the books from the file <b>books.json</b></li>
 					<li><b>open(bookName)</b>: provides the books 'bookName'. It <b>mocks</b> a database API and gets the book from the file <b>books.json</b></li>
-					<li>Have a look to the service here: <a href="https://github.com/daniboomerang/Reedsy-Challenge/blob/master/client/components/books/scripts/services.js" href="_blank_"><b>link to the service</b></a>
+					<li>Have a look to the service here: <a href="https://github.com/daniboomerang/Reedsy-Challenge/blob/master/client/components/books/scripts/services.js" target="_blank"><b>link to the service</b></a>
 					</li>
-        	</ul>
-    	</li>
-	</ul>
+	        	</ul>
+	    	</li>
+		</ul>
+	</div>
 </div>
 

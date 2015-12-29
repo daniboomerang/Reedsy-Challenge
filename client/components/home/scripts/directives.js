@@ -36,3 +36,10 @@ homeDirecives.directive('backEndDescription', function() {
 		templateUrl: 'components/home/views/back-end-description.html'
 	};
 });
+
+homeDirecives.directive('installationInstructions', function() {
+	return {
+		restrict: 'E',
+		templateUrl: 'components/home/views/installation-instructions.html'
+	};
+});

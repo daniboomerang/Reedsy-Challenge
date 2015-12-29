@@ -1,4 +1,4 @@
-#home-container { }
+#home-container a { color: #ACC93D }
 .home-section { padding: 1em 2em 1em 2em; }
 .home-subsection { padding: 0.2em 2em 0.2em 2em; }
 #site-description { font-size: 1em; }

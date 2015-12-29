@@ -24,6 +24,7 @@ Run the server
 ```sh
 $ node server.js
 ```
+It is waiting for you at the port 4000
 
 ## Version
 1.0.0
